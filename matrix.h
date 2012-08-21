@@ -24,7 +24,7 @@ class Matrix {
 	void identity(); //ok
 	void set(int r, int c, ...); //check floating points
 
-	void setFromArray(int r, int c, T* vec);
+	void setFromArray(int r, int c, const T* vec);
 	void t(); //ok
 	const Matrix invert();
 	T det(); //not working
@@ -181,7 +181,7 @@ void Matrix<T>::set(int r, int c, ...)
 	va_end(args);
 }
 	template<typename T>
-void Matrix<T>::setFromArray(int r, int c, T* vec)
+void Matrix<T>::setFromArray(int r, int c, const T* vec)
 {
 	if (this->r!=r || this->c!=c) {
 		delete[] this->mat;
